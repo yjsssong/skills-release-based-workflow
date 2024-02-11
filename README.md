@@ -16,59 +16,39 @@ _Create a release based workflow that is built on the foundations of the GitHub 
 </header>
 
 <!--
-  <<< Author notes: Step 2 >>>
+  <<< Author notes: Step 4 >>>
   Start this step by acknowledging the previous step.
   Define terms and link to docs.github.com.
 -->
 
-## Step 2: Add a new feature to the release branch
+## Step 4: Generate release notes and merge
 
-_Great job creating a beta release :heart:_
+_Thanks for opening that pull request :dancer:_
 
-### Release management
+### Automatically generated release notes
 
-As you prepare for a future release, you'll need to organize more than the tasks and features. It's important to create a clear workflow for your team, and to make sure that the work remains organized.
+[Automatically generated release notes](https://docs.github.com/en/repositories/releasing-projects-on-github/automatically-generated-release-notes) provide an automated alternative to manually writing release notes for your GitHub releases. With automatically generated release notes, you can quickly generate an overview of the contents of a release. Automatically generated release notes include a list of merged pull requests, a list of contributors to the release, and a link to a full changelog. You can also customize your release notes once they are generated.
 
-There are several strategies for managing releases. Some teams might use long-lived branches, like `production`, `dev`, and `main`. Some teams use simple feature branches, releasing from the main branch.
+### :keyboard: Activity: Generate release notes
 
-No one strategy is better than another. We always recommend being intentional about branches and reducing long-lived branches whenever possible.
+1. In a separate tab, go to the **Releases** page for this repository.
+   - _Tip: To reach this page, click the **Code** tab at the top of your repository. Then, find the navigation bar below the repository description, and click the **Releases** heading link._
+1. Click the **Draft a new release** button.
+1. In the field for _Tag version_, specify `v1.0.0`.
+1. To the right of the tag dropdown, click the _Target_ dropddown and select the `release-v1.0` branch.
+   - _Tip: This is temporary in order to generate release notes based on the changes in this branch._
+1. To the top right of the description text box, click **Generate release notes**.
+1. Review the release notes in the text box and customize the content if desired.
+1. Set the _Target_ branch back to the `main`, as this is the branch you want to create your tag on once the release branch is merged.
+1. Click **Save draft**, as you will publish this release in the next step.
 
-In this exercise, you'll use the `release-v1.0` branch to be your one long-lived branch per release version.
+You can now [merge](https://docs.github.com/en/get-started/quickstart/github-glossary#merge) your pull request!
 
-### Protected branches
+### :keyboard: Activity: Merge into main
 
-Like the `main` branch, you can protect release branches. This means you can protect branches from force pushes or accidental deletion. This is already configured in this repository.
-
-### Add a feature
-
-Releases are usually made of many smaller changes. Let's pretend we don't know about the bug we added earlier and we'll focus on a few features to update our game before the version update.
-
-- You should update the page background color to black.
-- I'll help you change the text colors to green.
-
-### :keyboard: Activity: Update `base.css`
-
-1. Create a new branch off of the `main` branch and change the `body` CSS declaration in `base.css` to match what is below. This will set the page background to black.
-
-```
-body {
-    background-color: black;
-}
-```
-
-1. Open a pull request with `release-v1.0` as the `base` branch, and your new branch as the `compare` branch.
-1. Fill in the pull request template to describe your changes.
-1. Click **Create pull request**.
-
-### Merge the new feature to the release branch
-
-Even with releases, the GitHub flow is still an important strategy for working with your team. It's a good idea to use short-lived branches for quick feature additions and bug fixes.
-
-Merge this feature pull request so that you can open the release pull request as early as possible.
-
-### :keyboard: Activity: Merge the pull request
-
-1. Click **Merge pull request**, and delete your branch.
+1. In a separate tab, go to the **Pull requests** page for this repository.
+1. Open your **Release v1.0** pull request.
+1. Click **Merge pull request**.
 1. Wait about 20 seconds then refresh this page (the one you're following instructions from). [GitHub Actions](https://docs.github.com/en/actions) will automatically update to the next step.
 
 <footer>
